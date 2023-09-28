@@ -1,0 +1,12 @@
+<meta charset = "utf-8">
+<script>
+const sendRequest = async () => {
+	const url = "http://localhost/javascript_practice/promise_async/test.json";
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log(data);
+	return(data);
+};
+
+console.log(sendRequest());
+</script>

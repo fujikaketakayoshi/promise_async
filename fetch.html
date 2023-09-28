@@ -1,0 +1,16 @@
+<meta charset = "utf-8">
+<script>
+const url = "http://localhost/javascript_practice/promise_async/test.json";
+const responsePromise = fetch(url);
+responsePromise
+.then((response) => { //成功時に実行される その1
+	console.log("status=" + response.status); //status=200
+	return response.json();
+})
+.then((data) => { //成功時に実行される その2
+	console.log(JSON.stringify(data)); //JSONを出力
+})
+.catch(function(err) { //失敗時に実行される
+	console.log("err=" + err);
+});
+</script>

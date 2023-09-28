@@ -1,0 +1,19 @@
+<meta charset = "utf-8">
+<div id="time"></div>
+<button onclick="sendRequest()">処理開始</button>
+
+<script>
+setInterval(() => time.innerText = Date.now());
+
+const onLoad = () => {
+    console.log("通信完了");
+}
+
+const sendRequest = () => {
+    const request = new XMLHttpRequest();
+    const url = "https://httpbin.org/delay/1";
+    request.open("GET", url);
+    request.onload = onLoad;
+    request.send();
+}
+</script>
